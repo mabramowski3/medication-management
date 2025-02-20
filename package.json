@@ -1,5 +1,5 @@
 {
-  "name": "monorepo-template",
+  "name": "medication-management",
   "version": "0.0.0",
   "workspaces": [
     "packages/*"
@@ -10,6 +10,8 @@
     "typescript": "^5"
   },
   "dependencies": {
+    "@tanstack/react-router": "^1.106.0",
+    "aws-sdk": "^2.1692.0",
     "sst": "^3"
   }
 }
