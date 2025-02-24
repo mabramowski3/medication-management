@@ -10,8 +10,9 @@
     "typescript": "^5"
   },
   "dependencies": {
-    "@tanstack/react-router": "^1.106.0",
+    "@aws-sdk/client-dynamodb": "^3.751.0",
+    "@aws-sdk/lib-dynamodb": "^3.751.0",
     "aws-sdk": "^2.1692.0",
-    "sst": "^3"
+    "sst": "3.9.10"
   }
 }

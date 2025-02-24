@@ -4,9 +4,10 @@
   "type": "module",
   "dependencies": {
     "@medication-management/core": "*",
-    "sst": "*"
+    "sst": "3.9.10"
   },
   "devDependencies": {
+    "@tsconfig/node22": "^22.0.0",
     "@types/aws-lambda": "^8"
   }
 }

@@ -12,7 +12,8 @@
     ]
   },
   "dependencies": {
-    "sst": "*"
+    "@aws-sdk/lib-dynamodb": "^3.751.0",
+    "sst": "3.9.10"
   },
   "devDependencies": {
     "vitest": "^2"

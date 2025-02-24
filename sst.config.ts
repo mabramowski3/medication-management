@@ -14,7 +14,7 @@ export default $config({
     await import("./infra/api");
 
     return {
-      MyBucket: storage.bucket.name,
+      MedicationsTable: storage.table.name
     };
   },
 });
