@@ -79,6 +79,7 @@ const AddMedicationDialog = ({ onAdd, onClose }) => {
           <button
             onClick={handleSubmit}
             className="w-full py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+            disabled={!newMedication.dosage || !newMedication.name}
           >
             Add Medication
           </button>
