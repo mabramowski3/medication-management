@@ -10,7 +10,7 @@ Allows you to define a schedule of medication doses, and track which doses have 
 ## Setup
 
 1. Run `npm install`
-2. Run `npx sst secret set ApiKey <API_KEY>`. Replace `<API_KEY>` with the Api Key you want to use, such as an UUIDv4
+2. Run `npx sst secret set ApiKey <API_KEY>`. Replace `<API_KEY>` with the Api Key you want to use. You can generate a UUIDv4 to use as a key with `node gen-api-key.js`
 3. Run `npx sst deploy` OR `npx sst dev`
 
 `npx sst deploy` will deploy all of the infrastructure to AWS. 
@@ -53,6 +53,8 @@ That said, the data for this app is relational. It would be better represented a
 
 If this app was meant to be used in a production environment, I would factor cost into my decision. It's easier to scale DyanmoDB than RDS, and I'd expect sporadic use with this app(I would think most people take their pills around breakfast, dinnertime, etc...) Maybe RDS would become cheaper at a certain scale, I didn't do too much number crunching. 
 
+I used the medication name as the primary index for medications. Not the best idea in retrospect. 
+
 ### Backend
 
 I used SST's monorepo template for this project. It uses domain driven architecture.
@@ -68,6 +70,8 @@ The way things are set up now, it is a bit cumbersome to spy on arguments sent t
 ### Frontend
 
 The front end is in a functional state. I'm not that enthuastic about the user experience, but I only have so much time to spend on this app. The way active/inactive meds in the medication list are handled and displayed could be improved, the add medication dialog could display form input errors, more error handling needs to be done in general, etc... The time picker component was AI generated and is kind of wonky, but it's not a feature I wanted to prioritize, and I figured it's better than nothing. 
+
+There's some quirks with respect to adding medications. Medications use the name as a key, and all the logic is case sensitive right now. If I had more time, that's one of the first things I'd change. Also, adding a medication with the same name will replace the existing mediaiton. I caught this early, but since editing a medication's name, schedule, etc.. isn't implemented yet, I decided to pretend this was a feature. 
 
 Whenever an http request is made, a loading screen pops up to prevent further user input until the request is done. I considered doing optimistic updates, but that would have added more complexity.
 
