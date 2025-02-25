@@ -7,6 +7,7 @@ import { DynamoDBDocumentClient } from "@aws-sdk/lib-dynamodb";
 const client = new DynamoDBClient({});
 const docClient = DynamoDBDocumentClient.from(client);
 
+//Add a medication
 export const handler: Handler = async (event: APIGatewayProxyEventV2) => {
   try {
     if (event.body === undefined) {

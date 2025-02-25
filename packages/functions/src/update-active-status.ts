@@ -7,6 +7,7 @@ import { DynamoDBDocumentClient } from "@aws-sdk/lib-dynamodb";
 const client = new DynamoDBClient({});
 const docClient = DynamoDBDocumentClient.from(client);
 
+//Update the active field of a medication.
 export const handler: Handler = async (event) => {
   try {
     if (event.body === undefined) {

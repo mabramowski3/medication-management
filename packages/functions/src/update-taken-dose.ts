@@ -7,6 +7,8 @@ import { DynamoDBDocumentClient } from "@aws-sdk/lib-dynamodb";
 const client = new DynamoDBClient({});
 const docClient = DynamoDBDocumentClient.from(client);
 
+//Update the list of taken doses. Taken doses are tracked in a list of strings representing dates in yyyy-MM-dd format
+//If the given date already exists in the list, it will be removed instead.
 export const handler: Handler = async (event) => {
   try {
     if (event.body === undefined) {

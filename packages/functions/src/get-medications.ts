@@ -7,6 +7,7 @@ import { DynamoDBDocumentClient } from "@aws-sdk/lib-dynamodb";
 const client = new DynamoDBClient({});
 const docClient = DynamoDBDocumentClient.from(client);
 
+//Get all medications
 export const handler: Handler = async (_event) => {
   try {
     const medications = await getMedications(docClient);
@@ -18,7 +19,7 @@ export const handler: Handler = async (_event) => {
         "Content-Type": "application/json",
       },
     };
-  } catch (e) {
+  } catch (e: any) {
     return {
       statusCode: 200,
       body: JSON.stringify({message: e.message}),
