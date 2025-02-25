@@ -39,6 +39,8 @@ The medications table has a column called takenDoses. It keeps a list of days a 
 
 I made 2 non-REST compliant endpoints. One for updating takenDoses, and one for updating active status. Just using a generic PATCH endpoint might have been easier to deal with. 
 
+The API is secured only by an API KEY. Unfortunately that key is available in the front-end javascript. I'd take a more secure approach if I had the time. 
+
 ### Framework
 
 I went with SST for the serverless framework. I spent some time with Serverless Framework, and I liked it, but I wanted to give SST a try too. I'd heard a lot of good things about it, and prefer setting up infra using code instead of yaml files. 
