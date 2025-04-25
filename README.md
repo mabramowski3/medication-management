@@ -1,7 +1,7 @@
 # Medication Manager
 
 Allows you to define a schedule of medication doses, and track which doses have been taken.
-A small scale app that was made in ~6 hours, with most of the time spent on the front-end.
+A small scale app that was made in ~6 hours, with most of the time spent on the front-end and learning SST.
 ## Requirements
 
 * [Node.js and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
